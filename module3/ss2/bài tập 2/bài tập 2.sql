@@ -19,7 +19,7 @@ CREATE TABLE product (
     pPrice DOUBLE
 );
 
-CREATE TABLE order_detail (
+CREATE TABLE order_detail ( 
     oID INT,
     pID INT,
     odQTY VARCHAR(20),
@@ -27,5 +27,5 @@ CREATE TABLE order_detail (
         REFERENCES older (oID),
     FOREIGN KEY (pID)
         REFERENCES product (pID),
-    PRIMARY KEY (oID , pID)
+   PRIMARY KEY (oID , pID)
 );
