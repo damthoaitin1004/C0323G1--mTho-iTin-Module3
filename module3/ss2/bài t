@@ -1,0 +1,31 @@
+create database sales_manager;
+use sales_manager;
+CREATE TABLE customer (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(45),
+    customer_ages INT
+);
+CREATE TABLE older (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    older_date DATE,
+    older_total_price DOUBLE,
+    FOREIGN KEY (customer_id)
+        REFERENCES customer (customer_id)
+);
+CREATE TABLE product (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(45),
+    product_price DOUBLE
+);
+
+CREATE TABLE order_detail ( 
+    order_id INT,
+    product_id INT,
+    order_qty VARCHAR(20),
+    FOREIGN KEY (order_id)
+        REFERENCES older (order_id),
+    FOREIGN KEY (product_id)
+        REFERENCES product (product_id),
+   PRIMARY KEY (order_id , product_id)
+);
