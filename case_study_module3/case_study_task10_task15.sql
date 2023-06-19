@@ -43,14 +43,20 @@ left join detailed_contract on contract.contract_code = detailed_contract.contra
         (c.contract_start between '2021-01-01' and '2021-06-30') or (not contract.contract_start between '2020-10-01' and '2020-12-31'))
        group by contract.contract_code;
 -- task 13
-select 	Accompanied_service.Accompanied_service_code, Accompanied_service.Accompanied_service_name, max(detailed_contract.detailed_contract_number) as quantity_service_free
- from Accompanied_service 
- join detailed_contract  on Accompanied_service.Accompanied_service_code= detailed_contract.Accompanied_service_code
- join contract  on detailed_contract.contract_code=contract.contract_code
- where detailed_contract.detailed_contract_number in(
- select max(detailed_contract_number)
- from detailed_contract)
- group by Accompanied_service.Accompanied_service_code;
+-- select 	Accompanied_service.Accompanied_service_code, Accompanied_service.Accompanied_service_name, max(detailed_contract.detailed_contract_number) as quantity_service_free
+--  from Accompanied_service 
+--  join detailed_contract  on Accompanied_service.Accompanied_service_code= detailed_contract.Accompanied_service_code
+--  join contract  on detailed_contract.contract_code=contract.contract_code
+--  where detailed_contract.detailed_contract_number in(
+--  select max(detailed_contract_number)
+--  from detailed_contract)
+--  group by Accompanied_service.Accompanied_service_code;
+ select Accompanied_service.Accompanied_service_code, Accompanied_service.Accompanied_service_name, sum(detailed_contract.detailed_contract_number) as count
+from Accompanied_service 
+join detailed_contract  on Accompanied_service.Accompanied_service_code = detailed_contract.Accompanied_service_code
+group by Accompanied_service.Accompanied_service_name, Accompanied_service.Accompanied_service_code
+order by count desc
+limit 2;
 --   ---task 14
 select contract.contract_code,
 service_type.service_type_name,
