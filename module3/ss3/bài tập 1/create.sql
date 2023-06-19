@@ -1,5 +1,5 @@
-CREATE DATABASE QuanLySinhVien;
-USE QuanLySinhVien;
+CREATE DATABASE student_academy_management;
+USE student_academy_management;
 CREATE TABLE Class
 (
     ClassID   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,

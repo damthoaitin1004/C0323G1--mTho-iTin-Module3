@@ -1,4 +1,4 @@
-USE QuanLySinhVien;
+USE student_academy_management;
 -- --Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’ 
 select *
 from Student

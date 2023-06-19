@@ -51,6 +51,6 @@ SELECT
     SUM(ctd.detailed_contract_number) AS number_contract
 FROM
     contract ct
-        LEFT JOIN
+        left JOIN
     detailed_contract ctd ON ctd.contract_code = ct.contract_code
 GROUP BY (ct.contract_code);

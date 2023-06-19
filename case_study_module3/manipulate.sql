@@ -46,10 +46,9 @@ values
   (3,'day'),
   (4,'hour');
   insert into service_type
-  value  (1,'year'),
-  (2,'month'),
-  (3,'day'),
-  (4,'hour');
+  value  (1,'Villa'),
+  (2,'House'),
+  (3,'Room');
 insert into service
 value (1,'Villa Beach Front',25000,10000000,10,'vip','Có hồ bơi','500',4,3,1),
  (2,'House Princess 01',14000,5000000,7,'vip','Có thêm bếp nướng',null,3,2,2),
