@@ -16,7 +16,7 @@ where employee_name like "H%" or employee_name like "T%" or employee_name like "
  GROUP BY s.customer_name
  ORDER BY  "count_booking";
  
-select c.customer_code,customer_name, customer_type_name, contract_code,service_name,contract_start,contract_end, rental_costs*detailed_contract_number as 'total price'
+select c.customer_code,customer_name, customer_type_name, ctr.contract_code,service_name,contract_start,contract_end, rental_costs*detailed_contract_number as 'total price'
 from customer c
 join customer_type cl
 on cl.customer_type_code = c.customer_type_code
@@ -28,4 +28,5 @@ left join detailed_contract dc
 on dc.contract_code=ctr.contract_code
 left join Accompanied_service ra
 on ra.Accompanied_service_code = dc.Accompanied_service_code;
+
 
