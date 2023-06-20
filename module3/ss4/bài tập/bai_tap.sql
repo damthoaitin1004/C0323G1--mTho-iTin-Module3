@@ -1,13 +1,13 @@
 USE student_academy_management;
 select *
-from Subject
-where credit = (SELECT MAX(credit) FROM Subject);
+from subject
+where creadit = (SELECT MAX(creadit) FROM subject);
 select *
-from Subject
-join Mark on Mark.SubId = Subject.SubId
-where Mark.Mark = (SELECT MAX(Mark.Mark) FROM Mark);
-select Student.StudentName,Student.Address,Student.Phone,Student.Status,AVG(Mark.Mark) as mark_avg
-from Student
-join Mark on Mark.StudentId = Student.StudentId
-group by Student.StudentId
+from subject
+join mark on mark.subject_id = subject.subject_id
+where mark.mark = (SELECT MAX(mark.mark) FROM mark);
+select student.student_name,student.address,student.phone,student.status,AVG(mark.mark) as mark_avg
+from student
+join mark on mark.StudentId = student.StudentId
+group by student.student_id
 order by mark_avg;
