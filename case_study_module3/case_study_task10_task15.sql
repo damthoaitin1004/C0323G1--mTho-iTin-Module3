@@ -75,3 +75,11 @@ group by Accompanied_service.Accompanied_service_code
 having count(detailed_contract.detailed_contract_code)=1
  )
 group by  detailed_contract.detailed_contract_code;
+-- task 15
+select employee.employee_code,employee.employee_name,levels.levels_name,parts.parts_name,employee.employee_phone_number,employee.employee_address
+from employee
+join levels on employee.levels_code=levels.levels_code
+join parts on employee.parts_code = parts.parts_code
+join contract on contract.employee_code = employee.employee_code
+group by employee.employee_code
+having count(contract.contract_code)<=3; 
