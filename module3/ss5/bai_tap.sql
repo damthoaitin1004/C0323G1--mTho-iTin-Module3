@@ -25,13 +25,13 @@ DROP VIEW product_info;
 
 
 DELIMITER //
-CREATE PROCEDURE GetAllProducts()
+CREATE PROCEDURE get_all()
 BEGIN
     SELECT *
     FROM product;
 END //
 DELIMITER ;
-call GetAllProducts();
+call get_all();
 DELIMITER //
 CREATE PROCEDURE add_new_product(
 in new_product_code VARCHAR(45),
