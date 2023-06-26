@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .col-1 {
+            width: 8.33%;
+            color: white
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-8{
+            width: 66.66%;
+        }
+        .col-2{
+            width: 16.66%;
+            text-align: center;
+        }
+        .col-12{
+            width: 100%;
+            text-align: center;
+            background-color: #555555;
+            padding-top: 10px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        }
+        .row2{
+            display: flex;
+            flex-wrap: wrap;
+            height: 700px;
+        }
+        .row3{
+            display: flex;
+            flex-wrap: wrap;
+            height: 50px;
+            color: white;
+           font-size: large;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="row" style="background-color: black">
+        <div class="col-1">Logo</div>
+        <div class="col-1">Home</div>
+        <div class="col-1">About</div>
+        <div class="col-1">Projects</div>
+        <div class="col-1">Contact</div>
+        <div class="col-6"></div>
+        <div class="col-1"><i class="fa-solid fa-right-to-bracket"></i> Login</div>
+    </div>
+<div class="row2" >
+    <div class="col-2" style="background-color: grey">
+
+        <h4 style="color: dodgerblue">link</h4>
+        <h4 style="color: dodgerblue">link</h4>
+        <h4 style="color: dodgerblue">link</h4>
+    </div>
+    <div class="col-8" style="padding-left: 10px">
+        <h1>Welcome</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, beatae dicta dignissimos facere maxime
+            minima nam nemo provident quasi quisquam ratione sunt, tempore tenetur totam ut vel veritatis! Corporis,
+            illum?</p>
+        <h2>Test</h2>
+        <p>
+            lorem ipsum...
+        </p>
+    </div>
+    <div class="col-2" style="background-color: dimgray">
+        <div style="margin-top: 20px;border:1px solid grey;height: 60px;margin-left: 30%;width: 50%;padding-top: 10px">ADS</div>
+        <div style="margin-top: 20px;border: 1px solid grey;height: 60px;margin-left: 30%;width: 50%;padding-top: 10px">ADS</div>
+    </div>
+</div>
+<div class="row3">
+    <div class="col-12">Footer Text</div>
+</div>
+</body>
+</html>
