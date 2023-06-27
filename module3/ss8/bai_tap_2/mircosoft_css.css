@@ -1,0 +1,38 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.col-2 {
+    width: 16.66%;
+    text-align: center;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.card-1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    /*background-color:beige;*/
+    /*background-clip: border-box;*/
+    border: 1px ;
+    border-radius: 0.25rem;
+
+}
+.col-sm-6-2{
+    flex: 0 0 auto;
+    height: 90px;
+}
+.card-body-1 {
+    flex: 1 1 auto;
+    padding: 10rem 10rem;
+    height: 300px;
+    color: white;
+    text-align: center;
+}
