@@ -11,9 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Discount Amount : <span>${result}</span></h1>
-<h1>Discount Amount : <span>${result2}</span></h1>
-<h1>Product Description : <span>${result3}</span></h1>
+<h1>Discount Amount : <span>${amount}</span></h1>
+<h1>Discount Amount : <span>${price}</span></h1>
+<h1>Product Description : <span>${desription}</span></h1>
 
 </body>
 </html>

@@ -5,8 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<%--<h1><%= "Hello World!" %>--%>
-<%--</h1>--%>
+
 <form action="/hello-servlet" method="post">
     <label><input type="text" style="width: 100px" name="product_description" id="product_description"> Product Description</label>
    <br>

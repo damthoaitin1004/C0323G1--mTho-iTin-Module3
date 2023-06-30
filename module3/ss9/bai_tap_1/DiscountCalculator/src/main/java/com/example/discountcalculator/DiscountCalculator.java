@@ -13,17 +13,11 @@ public class DiscountCalculator extends HttpServlet {
     private String message;
 
     public void init() {
-//        message = "Hello World!";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
-        // Hello
-//        PrintWriter out = response.getWriter();
-//        out.println("<html><body>");
-//        out.println("<h1>" + message + "</h1>");
-//        out.println("</body></html>");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -32,21 +26,12 @@ public class DiscountCalculator extends HttpServlet {
         double discountAmount = listPrice * discountPercent * 0.01;
         double discountPrice = listPrice - discountAmount;
         String description = request.getParameter("product_description");
-        request.setAttribute("result",discountAmount);
-        request.setAttribute("result2",discountPrice);
-        request.setAttribute("result3",description);
+        request.setAttribute("amount", discountAmount);
+        request.setAttribute("price", discountPrice);
+        request.setAttribute("desription", description);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("result.jsp");
-        requestDispatcher.forward(request,response);
-//
-//        PrintWriter out = response.getWriter();
-//        out.println("<html><body>");
-//        out.println("Product Description");
-//        out.println(productDescription);
-//        out.println("Discount Amount");
-//        out.println("<h1>" + discountAmount + "</h1>");
-//        out.println("Discount Price");
-//        out.println("<h1>" + discountPrice + "</h1>");
-//        out.println("</body></html>");
+        requestDispatcher.forward(request, response);
+
     }
 
     public void destroy() {
