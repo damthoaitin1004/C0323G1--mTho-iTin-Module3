@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface IProductService {
     List<Product> showList();
-    void save(Product product);
-    void delete(Product product);
-     Product getById(int code);
+    void save(String name,int price,int quantity,String information);
+    void delete(int id);
+     Product getById(int id);
     void update(int id, Product product);
     List<Product> showListName(String name);
 

@@ -29,6 +29,7 @@
 <table border="1">
     <tr>
         <td>STT</td>
+        <td>Mã sản phẩm</td>
         <td>Tên sản phẩm</td>
         <td>Giá</td>
         <td>Số lượng</td>
@@ -39,6 +40,7 @@
     <c:forEach var="product" items="${list}" varStatus="loop">
         <tr>
             <td>${loop.count}</td>
+            <td><c:out value="${product.id}"/></td>
             <td><c:out value="${product.name}"/></td>
             <td><c:out value="${product.price}"/></td>
             <td><c:out value="${product.quantity}"/></td>

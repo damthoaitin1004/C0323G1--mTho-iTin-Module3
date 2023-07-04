@@ -31,6 +31,7 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "edit":
                 showUpdate(request,response);
+                break;
 
             default:
                 showList(request, response);
@@ -153,6 +154,7 @@ public class ProductServlet extends HttpServlet {
             product.setPrice(price);
             product.setQuantity(quantity);
             product.setInformation(information);
+            productService.update(id, product);
             try {
                 response.sendRedirect("/ProductServlet");
             } catch (IOException e) {
@@ -166,7 +168,7 @@ public class ProductServlet extends HttpServlet {
         if (product == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
-            productService.delete(product);
+            productService.delete(id);
             try {
                 response.sendRedirect("/ProductServlet");
             } catch (IOException e) {
@@ -176,13 +178,11 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void create(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         int price = Integer.parseInt(request.getParameter("price"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         String information = request.getParameter("information");
-        Product newProduct = new Product(id, name, price, quantity, information);
-        productService.save(newProduct);
+        productService.save(name,price,quantity,information);
         try {
             response.sendRedirect("/ProductServlet?msg=them%20moi%20thanh%20cong");
         } catch (IOException e) {

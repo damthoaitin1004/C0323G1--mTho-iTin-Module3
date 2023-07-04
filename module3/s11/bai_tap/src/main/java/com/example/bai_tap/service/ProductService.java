@@ -16,26 +16,27 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void save(Product product) {
-      iProductRepository.add(product);
+    public void save(String name,int price,int quantity,String information) {
+         List<Product> productList = iProductRepository.getAll();
+         int newId =1;
+        for (Product p:productList) {
+            if (p.getId()==newId){newId++;}
+        }
+        Product newProduct = new Product(newId,name,price,quantity,information);
+      iProductRepository.add(newProduct);
     }
 
     @Override
-    public void delete(Product product) {
-        iProductRepository.remove(product);
+    public void delete(int id) {
+        iProductRepository.remove(id);
     }
-    public Product getById(int code){
-        List<Product> productList = iProductRepository.getAll();
-        for (Product p: productList) {
-            if (p.getId()==code){
-                return p;
-            }
-        }
-        return null;
+    public Product getById(int id){
+        return iProductRepository.getById(id);
     }
 
     @Override
     public void update(int id, Product product) {
+        iProductRepository.update(id,product);
 
     }
 
