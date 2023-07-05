@@ -95,8 +95,8 @@ public class UserRepository implements IUserRepository {
         List<User> users = new ArrayList<>();
         Connection connection = BaseRepository.getConnection();
 
-        Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery(SELECT_ALL_USERS);
+        CallableStatement callableStatement = connection.prepareCall(SELECT_ALL_USERS);
+        ResultSet rs = callableStatement.executeQuery(SELECT_ALL_USERS);
         while (rs.next()) {
             int id = rs.getInt("id");
             String name = rs.getString("name");
